@@ -1,0 +1,197 @@
+#----------------------------------------------------------------------
+Programming Assignment 03
+
+#----------------------------------------------------------------------
+Purpose:
+
+  * Demonstrate ability to write yet another few simple C functions.
+
+  * Demonstrate ability to run an evaluation program a few times.
+
+#----------------------------------------------------------------------
+Background:
+
+  * This time it's the infamous HEAPSORT, BUILD_MAX_HEAP, and
+    MAX_HEAPIFY.
+
+#----------------------------------------------------------------------
+Tasks:
+
+  1. Download hmwk_03_dalioba.zip from Canvas.
+
+  2. Unzip the file somewhere convenient.
+
+  3. Change 'dalioba' in the name of the directory to your NetID.
+     (Your NetID is three letters followed by four or five digits.
+      The directory name will now be something like
+      'hmwk_03_abc1234' but with _your_ NetID in place of
+      'abc1234'.)
+
+  4. Look in that directory.  There's a Template directory that
+     has some files in it.  Move them up one level into the
+     'hmwk_03_abc1234' directory.
+
+  5. Change the header lines in the files heapsort.c.
+
+      -- Line 1:  Family name first, then a comma, then
+                  personal name.
+
+      -- Line 2:  Your NetID.
+
+      -- Line 3:  The date you edited the file, in the format
+                  YYYY-MM-DD (all digits!).
+
+  6. Don't change anything in any other file!
+
+  7. There are some TODO markers in heapsort.c.
+     Write the code that they indicate.  (You can get the
+     definition signature from the corresponding .h file.)
+
+  8. Compile and run your Heapsort code as follows,
+
+$ gcc -Wall -Wextra -fsanitize=leak -fsanitize=address -o hmwk_03 hmwk_03.c heapsort.c
+$ ./hmwk_03  10000000
+heapsort( ascending,     10,000,000 ) =>     0 errs,                231,881,708 exchanges,       4.165s
+heapsort( shuffle,       10,000,000 ) =>     0 errs,                223,836,039 exchanges,       7.036s
+heapsort( descending,    10,000,000 ) =>     0 errs,                216,912,428 exchanges,       4.080s
+$ ./hmwk_03  20000000
+heapsort( ascending,     20,000,000 ) =>     0 errs,                484,278,050 exchanges,       8.949s
+heapsort( shuffle,       20,000,000 ) =>     0 errs,                467,667,549 exchanges,      16.746s
+heapsort( descending,    20,000,000 ) =>     0 errs,                453,081,006 exchanges,       8.509s
+$ ./hmwk_03  30000000
+heapsort( ascending,     30,000,000 ) =>     0 errs,                743,707,054 exchanges,      13.129s
+heapsort( shuffle,       30,000,000 ) =>     0 errs,                718,961,163 exchanges,      24.267s
+heapsort( descending,    30,000,000 ) =>     0 errs,                697,257,784 exchanges,      13.001s
+$ ./hmwk_03  40000000
+heapsort( ascending,     40,000,000 ) =>     0 errs,              1,009,056,072 exchanges,      17.909s
+heapsort( shuffle,       40,000,000 ) =>     0 errs,                975,335,469 exchanges,      34.651s
+heapsort( descending,    40,000,000 ) =>     0 errs,                946,293,992 exchanges,      17.828s
+$ ./hmwk_03  50000000
+heapsort( ascending,     50,000,000 ) =>     0 errs,              1,277,688,806 exchanges,      23.561s
+heapsort( shuffle,       50,000,000 ) =>     0 errs,              1,235,785,565 exchanges,      45.515s
+heapsort( descending,    50,000,000 ) =>     0 errs,              1,198,406,052 exchanges,      22.611s
+$
+
+  9. If you get a crash, core dump, segmentation fault, or any
+     other compile-time or runtime error (including those reported
+     by the sanitizer), or any "Oops" messages when your Heapsort
+     runs, do not go any further until you have found and fixed
+     your error(s).
+
+     Do you think you should see the same number of exchanges for
+     each test case?  Why or why not?
+
+     Notice that this time there's not only an ASCENDING and
+     SHUFFLE test case, but also a DESCENDING one.
+
+     The ASCENDING case is the array already in sorted order.  The
+     SHUFFLE case has all of the elements mixed up.  The last case,
+     DESCENDING, has the elements in EXACTLY BACKWARDS ORDER.
+
+     Why then does the DESCENDING case have the LOWEST number of
+     exchanges and the fastest runtime?
+
+ 10. Once everything is running OK, you can take a look at the
+     dalioba-results-heapsort.txt file.
+
+     Here you will see the sizes, invokes, and timings I got when
+     I ran the code on my potato computer.
+
+     Do a spread of runs on your own machine.  You want to get
+     about 15-20 runs spread between about 1-5 seconds on the low
+     end and as big as you can on the high end (so the plot is
+     useful).  How big of a test case can you run on your machine?
+
+ 11. Collect your results in a file named
+     'abc1234-results-heapsort.txt' where 'abc1234' is YOUR NetID.
+
+ 12. Recompile your solutions with these commands,
+
+$ gcc -Wall -Wextra -fsanitize=leak -fsanitize=address -Ofast -o hmwk_03 hmwk_03.c heapsort.c
+$
+
+     and rerun your evaluations with the same array sizes.  Collect
+     your results and add them to your 'abc1234-results-heapsort.txt'
+     file.
+
+     Did it run any faster?
+
+ 13. The 'ulimit' log in the ulimit.txt file shows what process
+     limits I have set.  Some students have trouble with a stack
+     overflow.  If that happens to you, you can use ulimit -s to
+     increase your stack limit.  (This shouldn't happen on such
+     small examples, but one never knows ...)
+
+ 14. By the way, if you get any reported memory issues from the
+     sanitizer, try reruning the same size test but with your
+     code recompliled with no optimizations and also with the -g
+     switch so you get line numbers in the reports.
+
+#----------------------------------------------------------------------
+Submission:
+
+Make a zipfile of your 'hmwk_03_abc1234' directory (with 'abc1234'
+changed to YOUR NetID and with your heapsort.c and
+abc1234-results-heapsort.txt files in it) and submit this zipfile
+on Canvas as your results for this assignment.
+
+All your zipfile should include is a directory with two files in
+it, your versions of heapsort.c (did you update the headers
+correctly?) and your version of abc1234-results-heapsort.txt
+(ensure that you change 'abc1234' to YOUR NetID).
+
+Do NOT include any other files.
+
+#----------------------------------------------------------------------
+Hints:
+  1. Ensure your program compiles and runs correctly.  You should
+     not get ANY warnings or errors when you compile.  ALWAYS
+     compile your code with -Wall and -Wextra and deal with ANY
+     warnings or errors that are identified.  ALWAYS compile your
+     code with -fsanitize=leak and -fsanitize=address and deal with
+     ANY warnings or errors reported.
+
+     Generating warnings or errors, not compiling, not running,
+     core dumping, crashing, going into an infinite loop, getting
+     the wrong answers, getting memory errors ... will earn you
+     ZERO points.
+
+     Once you have removed any warnings / errors from your code,
+     you should recompile WITHOUT the -fsanitize options so that
+     will get properly representative run times.
+
+  2. Ensure that you update the three header lines in the source
+     file with YOUR name (family name first, then a comma, then
+     your personal name), YOUR NetID, and the date you edit the
+     file, in the format YYYY-MM-DD (all digits!).
+
+     Not updating the header lines properly will cost you points.
+
+  3. Ensure your submission is packaged EXACTLY as described above.
+
+      -- Your submission should be a ZIP FILE (not a tar, rar, gz,
+         or any other kind of compressed file).
+
+      -- The zip file should be named 'hmwk_03_abc1234.zip' (with
+         'abc1234' replaced with YOUR NetID).
+
+      -- This zip file should have ONE item in it, a directory
+         named 'hmwk_03_abc1234'  (with 'abc1234' replaced with
+         YOUR NetID).
+
+      -- Your two files should be in that directory.  The files
+         should be named heapsort.c and abc1234-results-heapsort.txt
+         (with 'abc1234' replaced with YOUR NetID).
+
+     Submissions in the wrong format score ZERO points.
+
+  4. After you submit your zip file on Canvas, download it from
+     Canvas and check that your submission is in the proper
+     format, that the program runs and prints the correct output,
+     that you updated the header lines correctly, and so forth.
+
+  5. Are you CERTAIN you complied with all of these nit-picking
+     instructions?  Really?  Maybe you ought to check just one
+     more time. :)
+
+#----------------------------------------------------------------------

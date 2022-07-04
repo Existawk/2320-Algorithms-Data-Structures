@@ -1,0 +1,90 @@
+========================================
+
+=== No specific optimizations
+
+insertion( ascending,        50,000 ) =>     0 errs,                          0 while iters,       0.000s
+insertion( shuffle,          50,000 ) =>     0 errs,                625,651,396 while iters,       1.655s
+insertion( ascending,       100,000 ) =>     0 errs,                          0 while iters,       0.000s
+insertion( shuffle,         100,000 ) =>     0 errs,              2,507,885,979 while iters,       4.904s
+insertion( ascending,       150,000 ) =>     0 errs,                          0 while iters,       0.001s
+insertion( shuffle,         150,000 ) =>     0 errs,              5,634,679,062 while iters,      11.129s
+insertion( ascending,       200,000 ) =>     0 errs,                          0 while iters,       0.001s
+insertion( shuffle,         200,000 ) =>     0 errs,             10,030,680,326 while iters,      20.324s
+insertion( ascending,       250,000 ) =>     0 errs,                          0 while iters,       0.001s
+insertion( shuffle,         250,000 ) =>     0 errs,             15,638,745,016 while iters,      37.660s
+insertion( ascending,       300,000 ) =>     0 errs,                          0 while iters,       0.001s
+insertion( shuffle,         300,000 ) =>     0 errs,             22,519,399,416 while iters,      45.173s
+insertion( ascending,       350,000 ) =>     0 errs,                          0 while iters,       0.001s
+insertion( shuffle,         350,000 ) =>     0 errs,             30,673,968,844 while iters,      62.537s
+insertion( ascending,       400,000 ) =>     0 errs,                          0 while iters,       0.001s
+insertion( shuffle,         400,000 ) =>     0 errs,             40,025,541,055 while iters,     101.886s
+insertion( ascending,       450,000 ) =>     0 errs,                          0 while iters,       0.002s
+insertion( shuffle,         450,000 ) =>     0 errs,             50,674,464,604 while iters,     117.589s
+insertion( ascending,       500,000 ) =>     0 errs,                          0 while iters,       0.002s
+insertion( shuffle,         500,000 ) =>     0 errs,             62,487,039,829 while iters,     140.324s
+insertion( ascending,       550,000 ) =>     0 errs,                          0 while iters,       0.002s
+insertion( shuffle,         550,000 ) =>     0 errs,             75,613,455,571 while iters,     175.576s
+insertion( ascending,       600,000 ) =>     0 errs,                          0 while iters,       0.002s
+insertion( shuffle,         600,000 ) =>     0 errs,             90,030,040,061 while iters,     242.305s
+insertion( ascending,       650,000 ) =>     0 errs,                          0 while iters,       0.003s
+insertion( shuffle,         650,000 ) =>     0 errs,            105,511,417,923 while iters,     262.610s
+insertion( ascending,       700,000 ) =>     0 errs,                          0 while iters,       0.003s
+insertion( shuffle,         700,000 ) =>     0 errs,            122,607,783,755 while iters,     287.873s
+insertion( ascending,       750,000 ) =>     0 errs,                          0 while iters,       0.003s
+insertion( shuffle,         750,000 ) =>     0 errs,            140,638,905,063 while iters,     314.126s
+insertion( ascending,       800,000 ) =>     0 errs,                          0 while iters,       0.003s
+insertion( shuffle,         800,000 ) =>     0 errs,            160,039,978,122 while iters,     393.164s
+insertion( ascending,       850,000 ) =>     0 errs,                          0 while iters,       0.003s
+insertion( shuffle,         850,000 ) =>     0 errs,            180,709,337,444 while iters,     398.297s
+insertion( ascending,       900,000 ) =>     0 errs,                          0 while iters,       0.003s
+insertion( shuffle,         900,000 ) =>     0 errs,            202,722,108,562 while iters,     461.926s
+insertion( ascending,       950,000 ) =>     0 errs,                          0 while iters,       0.003s
+insertion( shuffle,         950,000 ) =>     0 errs,            225,757,911,621 while iters,     510.783s
+insertion( ascending,     1,000,000 ) =>     0 errs,                          0 while iters,       0.003s
+insertion( shuffle,       1,000,000 ) =>     0 errs,            250,080,950,153 while iters,     590.886s
+
+
+=== With -Ofast optimization
+
+insertion( ascending,        50,000 ) =>     0 errs,                          0 while iters,       0.000s
+insertion( shuffle,          50,000 ) =>     0 errs,                625,651,396 while iters,       0.366s
+insertion( ascending,       100,000 ) =>     0 errs,                          0 while iters,       0.000s
+insertion( shuffle,         100,000 ) =>     0 errs,              2,507,885,979 while iters,       1.408s
+insertion( ascending,       150,000 ) =>     0 errs,                          0 while iters,       0.000s
+insertion( shuffle,         150,000 ) =>     0 errs,              5,634,679,062 while iters,       3.181s
+insertion( ascending,       200,000 ) =>     0 errs,                          0 while iters,       0.000s
+insertion( shuffle,         200,000 ) =>     0 errs,             10,030,680,326 while iters,       5.605s
+insertion( ascending,       250,000 ) =>     0 errs,                          0 while iters,       0.000s
+insertion( shuffle,         250,000 ) =>     0 errs,             15,638,745,016 while iters,       8.741s
+insertion( ascending,       300,000 ) =>     0 errs,                          0 while iters,       0.000s
+insertion( shuffle,         300,000 ) =>     0 errs,             22,519,399,416 while iters,      13.165s
+insertion( ascending,       350,000 ) =>     0 errs,                          0 while iters,       0.000s
+insertion( shuffle,         350,000 ) =>     0 errs,             30,673,968,844 while iters,      18.108s
+insertion( ascending,       400,000 ) =>     0 errs,                          0 while iters,       0.000s
+insertion( shuffle,         400,000 ) =>     0 errs,             40,025,541,055 while iters,      22.865s
+insertion( ascending,       450,000 ) =>     0 errs,                          0 while iters,       0.000s
+insertion( shuffle,         450,000 ) =>     0 errs,             50,674,464,604 while iters,      29.337s
+insertion( ascending,       500,000 ) =>     0 errs,                          0 while iters,       0.000s
+insertion( shuffle,         500,000 ) =>     0 errs,             62,487,039,829 while iters,      36.707s
+insertion( ascending,       550,000 ) =>     0 errs,                          0 while iters,       0.000s
+insertion( shuffle,         550,000 ) =>     0 errs,             75,613,455,571 while iters,      43.449s
+insertion( ascending,       600,000 ) =>     0 errs,                          0 while iters,       0.001s
+insertion( shuffle,         600,000 ) =>     0 errs,             90,030,040,061 while iters,      52.033s
+insertion( ascending,       650,000 ) =>     0 errs,                          0 while iters,       0.000s
+insertion( shuffle,         650,000 ) =>     0 errs,            105,511,417,923 while iters,      60.350s
+insertion( ascending,       700,000 ) =>     0 errs,                          0 while iters,       0.000s
+insertion( shuffle,         700,000 ) =>     0 errs,            122,607,783,755 while iters,      69.546s
+insertion( ascending,       750,000 ) =>     0 errs,                          0 while iters,       0.001s
+insertion( shuffle,         750,000 ) =>     0 errs,            140,638,905,063 while iters,      79.339s
+insertion( ascending,       800,000 ) =>     0 errs,                          0 while iters,       0.001s
+insertion( shuffle,         800,000 ) =>     0 errs,            160,039,978,122 while iters,      91.217s
+insertion( ascending,       850,000 ) =>     0 errs,                          0 while iters,       0.001s
+insertion( shuffle,         850,000 ) =>     0 errs,            180,709,337,444 while iters,     103.579s
+insertion( ascending,       900,000 ) =>     0 errs,                          0 while iters,       0.001s
+insertion( shuffle,         900,000 ) =>     0 errs,            202,722,108,562 while iters,     119.184s
+insertion( ascending,       950,000 ) =>     0 errs,                          0 while iters,       0.001s
+insertion( shuffle,         950,000 ) =>     0 errs,            225,757,911,621 while iters,     129.552s
+insertion( ascending,     1,000,000 ) =>     0 errs,                          0 while iters,       0.001s
+insertion( shuffle,       1,000,000 ) =>     0 errs,            250,080,950,153 while iters,     146.190s
+
+========================================

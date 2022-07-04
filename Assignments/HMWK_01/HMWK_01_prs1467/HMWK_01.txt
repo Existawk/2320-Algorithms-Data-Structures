@@ -1,0 +1,221 @@
+#----------------------------------------------------------------------
+Programming Assignment 01
+
+#----------------------------------------------------------------------
+Purpose:
+
+  * Demonstrate C development environment.
+
+  * Demonstrate ability to write a couple of simple C functions.
+
+  * Demonstrate ability to run an evaluation program a few times.
+
+#----------------------------------------------------------------------
+Background:
+
+  * The two simple functions this time are INSERTION sort and
+    SELECTION sort as described in class.
+
+#----------------------------------------------------------------------
+Tasks:
+
+  1. Download hmwk_01_dalioba.zip from Canvas.
+
+  2. Unzip the file somewhere convenient.
+
+  3. Change 'dalioba' in the name of the directory to your NetID.
+     (Your NetID is three letters followed by four or five digits.
+      The directory name will now be something like
+      'hmwk_01_abc1234' but with _your_ NetID in place of
+      'abc1234'.)
+
+  4. Look in that directory.  There's a Template directory that
+     has some files in it.  Move them up one level into the
+     'hmwk_01_abc1234' directory.
+
+  5. Change the header lines in the files insertion.c and
+     selection.c.
+
+      -- Line 1:  Family name first, then a comma, then
+                  personal name.
+
+      -- Line 2:  Your NetID.
+
+      -- Line 3:  The date you edited the file, in the format
+                  YYYY-MM-DD (all digits!).
+
+  6. Don't change anything in any other file!
+
+  7. There are a couple of TODO markers in the files.
+     Write the code that they indicate.  (You can get the
+     definition signatures from the corresponding .h files.)
+
+  8. Compile and run your Insertion sort code as follows,
+
+$ gcc -Wall -Wextra -o hmwk_01a hmwk_01a.c insertion.c
+$ ./hmwk_01a  50000
+insertion( ascending,        50,000 ) =>     0 errs,                          0 while iters,       0.000s
+insertion( shuffle,          50,000 ) =>     0 errs,                625,651,396 while iters,       1.552s
+$ ./hmwk_01a 100000
+insertion( ascending,       100,000 ) =>     0 errs,                          0 while iters,       0.000s
+insertion( shuffle,         100,000 ) =>     0 errs,              2,507,885,979 while iters,       6.331s
+$ ./hmwk_01a 150000
+insertion( ascending,       150,000 ) =>     0 errs,                          0 while iters,       0.001s
+insertion( shuffle,         150,000 ) =>     0 errs,              5,634,679,062 while iters,      14.089s
+$ ./hmwk_01a 200000
+insertion( ascending,       200,000 ) =>     0 errs,                          0 while iters,       0.001s
+insertion( shuffle,         200,000 ) =>     0 errs,             10,030,680,326 while iters,      25.069s
+$ ./hmwk_01a 250000
+insertion( ascending,       250,000 ) =>     0 errs,                          0 while iters,       0.001s
+insertion( shuffle,         250,000 ) =>     0 errs,             15,638,745,016 while iters,      38.996s
+$ ./hmwk_01a 300000
+insertion( ascending,       300,000 ) =>     0 errs,                          0 while iters,       0.001s
+insertion( shuffle,         300,000 ) =>     0 errs,             22,519,399,416 while iters,      56.106s
+$
+
+  9. If you get a crash, core dump, segmentation fault, or any
+     other compile-time or runtime error (or any "Oops" messages
+     when your Insertion sort runs), do not go any further until
+     you have found and fixed your error(s).
+
+     Since the array is shuffled into a RANDOM order, you won't
+     (necessarily) get the same number of "while" iters shown
+     above in the "shuffle" cases, but you should see _similar_
+     numbers.
+
+     For the "ascending" cases, you should show ZERO "while" iters.
+
+ 10. Now compile and run your Selection sort code as follows,
+
+$ gcc -Wall -Wextra -o hmwk_01b hmwk_01b.c selection.c
+$ ./hmwk_01b  50000
+selection( ascending,        50,000 ) =>     0 errs,              1,249,975,000 inner iters,       2.518s
+selection( shuffle,          50,000 ) =>     0 errs,              1,249,975,000 inner iters,       2.530s
+$ ./hmwk_01b 100000
+selection( ascending,       100,000 ) =>     0 errs,              4,999,950,000 inner iters,      10.244s
+selection( shuffle,         100,000 ) =>     0 errs,              4,999,950,000 inner iters,      10.207s
+$ ./hmwk_01b 150000
+selection( ascending,       150,000 ) =>     0 errs,             11,249,925,000 inner iters,      22.798s
+selection( shuffle,         150,000 ) =>     0 errs,             11,249,925,000 inner iters,      22.934s
+$ ./hmwk_01b 200000
+selection( ascending,       200,000 ) =>     0 errs,             19,999,900,000 inner iters,      40.591s
+selection( shuffle,         200,000 ) =>     0 errs,             19,999,900,000 inner iters,      42.830s
+$ ./hmwk_01b 250000
+selection( ascending,       250,000 ) =>     0 errs,             31,249,875,000 inner iters,      64.831s
+selection( shuffle,         250,000 ) =>     0 errs,             31,249,875,000 inner iters,      64.097s
+$ ./hmwk_01b 300000
+selection( ascending,       300,000 ) =>     0 errs,             44,999,850,000 inner iters,      92.346s
+selection( shuffle,         300,000 ) =>     0 errs,             44,999,850,000 inner iters,      93.107s
+$
+
+ 11. If you get a crash, core dump, segmentation fault, or any
+     other compile-time or runtime error (or any "Oops" messages
+     when your Selection sort runs), do not go any further until
+     you have found and fixed your error(s).
+
+     Even though the array is shuffled into a RANDOM order, you
+     should get the same number of "inner" iters shown above in
+     the "shuffle" cases.
+
+     Why is this so for Selection sort, but not for Insertion sort?
+
+     For the "ascending" cases, you should show ZERO "inner" iters.
+
+ 12. Once everything is running OK, you can take a look at the
+     dalioba-results-insertion.txt and dalioba-results-selection.txt
+     files.
+
+     Here you will see the sizes, iter counts, and timings I got
+     when I ran the code on my potato computer.
+
+     Do a spread of runs on your own machine.  You want to get
+     about 15-20 runs spread between about 1-5 seconds on the low
+     end and several hundred seconds on the high end.
+
+ 11. Collect your results in a file named
+     'abc1234-results-insertion.txt' (for the Insertion sort) and
+     'abc1234-results-selection.txt' (for the Selection sort),
+     where 'abc1234' is YOUR NetID.
+
+ 12. Recompile your solutions with these commands,
+
+$ gcc -Ofast -Wall -Wextra -o hmwk_01a hmwk_01a.c insertion.c
+$ gcc -Ofast -Wall -Wextra -o hmwk_01b hmwk_01b.c selection.c
+$
+
+     and rerun your evaluations with the same array sizes.  Collect
+     your results and add them to your 'abc1234-results-insertion.txt'
+     and 'abc1234-results-selection.txt' files.
+
+     Did it run any faster?
+
+ 13. The 'ulimit' log in the ulimit.txt file shows what process
+     limits I have set.  Some students have trouble with a stack
+     overflow.  If that happens to you, you can use ulimit -s to
+     increase your stack limit.  (This shouldn't happen on such a
+     small example, but one never knows ...)
+
+#----------------------------------------------------------------------
+Submission:
+
+Make a zipfile of your 'hmwk_01_abc1234' directory (with 'abc1234'
+changed to YOUR NetID and with your insertion.c, selection.c, and
+abc1234-results-insertion.txt and abc1234-results-selection.txt
+files in it) and submit this zipfile on Canvas as your results for
+this assignment.
+
+All your zipfile should include is a directory with four files in
+it, your versions of insertion.c and selection.c (did you update
+the headers correctly?) and your versions of
+abc1234-results-insertion.txt and abc1234-results-selection.txt
+(ensure that you change 'abc1234' to YOUR NetID).
+
+You don't have to include any other files.
+
+#----------------------------------------------------------------------
+Hints:
+  1. Ensure your programs compile and run correctly.  You should
+     not get ANY warnings or errors when you compile.  ALWAYS
+     compile your code with -Wall and -Wextra and deal with ANY
+     warnings or errors that are identified.
+
+     Generating warnings or errors, not compiling, not running,
+     core dumping, crashing, going into an infinite loop, getting
+     the wrong answers, ... will earn you ZERO points.
+
+  2. Ensure that you update the three header lines in each of the
+     submitted source files with YOUR name (family name first,
+     then a comma, then your personal name), YOUR NetID, and the
+     date you edit the file, in the format YYYY-MM-DD (all digits!).
+
+     Not updating the header lines properly will cost you points.
+
+  3. Ensure your submission is packaged EXACTLY as described above.
+
+      -- Your submission should be a ZIP FILE (not a tar, rar, gz,
+         or any other kind of compressed file).
+
+      -- The zip file should be named 'hmwk_01_abc1234.zip' (with
+         'abc1234' replaced with YOUR NetID).
+
+      -- This zip file should have ONE item in it, a directory
+         named 'hmwk_01_abc1234'  (with 'abc1234' replaced with
+         YOUR NetID).
+
+      -- Your two files should be in that directory.  The files
+         should be named insertion.c, selection.c,
+         abc1234-results-insertion.txt and abc1234-results-selection.txt
+         (with 'abc1234' replace with YOUR NetID).
+
+     Submissions in the wrong format score ZERO points.
+
+  4. After you submit your zip file on Canvas, download it from
+     Canvas and check that your submission is in the proper
+     format, that the program runs and prints the correct output,
+     that you updated the header lines correctly, and so forth.
+
+  5. Are you CERTAIN you complied with all of these nit-picking
+     instructions?  Really?  Maybe you ought to check just one
+     more time. :)
+
+#----------------------------------------------------------------------

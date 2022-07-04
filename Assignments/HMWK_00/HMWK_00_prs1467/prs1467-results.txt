@@ -1,0 +1,70 @@
+========================================
+
+$ ulimit -a
+core file size          (blocks, -c) 0
+data seg size           (kbytes, -d) unlimited
+scheduling priority             (-e) 0
+file size               (blocks, -f) unlimited
+pending signals                 (-i) 96083
+max locked memory       (kbytes, -l) 16384
+max memory size         (kbytes, -m) unlimited
+open files                      (-n) 1024
+pipe size            (512 bytes, -p) 8
+POSIX message queues     (bytes, -q) 819200
+real-time priority              (-r) 0
+stack size              (kbytes, -s) 8192
+cpu time               (seconds, -t) unlimited
+max user processes              (-u) 96083
+virtual memory          (kbytes, -v) unlimited
+file locks                      (-x) unlimited
+$
+
+========================================
+
+=== With no specific optimizations
+
+fibonacci(  0 ) =>              0,              1 call,     0.000s
+fibonacci(  1 ) =>              1,              1 call,     0.000s
+fibonacci(  5 ) =>              5,             15 calls,     0.000s
+fibonacci( 10 ) =>             55,            177 calls,     0.000s
+fibonacci( 15 ) =>            610,          1,973 calls,     0.000s
+fibonacci( 20 ) =>          6,765,         21,891 calls,     0.000s
+fibonacci( 25 ) =>         75,025,        242,785 calls,     0.000s
+fibonacci( 30 ) =>        832,040,      2,692,537 calls,     0.005s
+fibonacci( 35 ) =>      9,227,465,     29,860,703 calls,     0.058s
+fibonacci( 40 ) =>    102,334,155,    331,160,281 calls,     0.641s
+fibonacci( 41 ) =>    165,580,141,    535,828,591 calls,     1.040s
+fibonacci( 42 ) =>    267,914,296,    866,988,873 calls,     1.683s
+fibonacci( 43 ) =>    433,494,437,  1,402,817,465 calls,     2.747s
+fibonacci( 44 ) =>    701,408,733,  2,269,806,339 calls,     4.488s
+fibonacci( 45 ) =>  1,134,903,170,  3,672,623,805 calls,     7.210s
+fibonacci( 46 ) =>  1,836,311,903,  5,942,430,145 calls,    11.605s
+fibonacci( 47 ) =>  2,971,215,073,  9,615,053,951 calls,    18.819s
+fibonacci( 48 ) =>  4,807,526,976, 15,557,484,097 calls,    30.505s
+fibonacci( 49 ) =>  7,778,742,049, 25,172,538,049 calls,    49.803s
+fibonacci( 50 ) => 12,586,269,025, 40,730,022,147 calls,    80.176s
+
+=== With -Ofast optimization
+
+fibonacci(  0 ) =>              0,              1 call,     0.000s
+fibonacci(  1 ) =>              1,              1 call,     0.000s
+fibonacci(  5 ) =>              5,             15 calls,     0.000s
+fibonacci( 10 ) =>             55,            177 calls,     0.000s
+fibonacci( 15 ) =>            610,          1,973 calls,     0.000s
+fibonacci( 20 ) =>          6,765,         21,891 calls,     0.000s
+fibonacci( 25 ) =>         75,025,        242,785 calls,     0.000s
+fibonacci( 30 ) =>        832,040,      2,692,537 calls,     0.002s
+fibonacci( 35 ) =>      9,227,465,     29,860,703 calls,     0.021s
+fibonacci( 40 ) =>    102,334,155,    331,160,281 calls,     0.214s
+fibonacci( 41 ) =>    165,580,141,    535,828,591 calls,     0.376s
+fibonacci( 42 ) =>    267,914,296,    866,988,873 calls,     0.570s
+fibonacci( 43 ) =>    433,494,437,  1,402,817,465 calls,     0.982s
+fibonacci( 44 ) =>    701,408,733,  2,269,806,339 calls,     1.515s
+fibonacci( 45 ) =>  1,134,903,170,  3,672,623,805 calls,     2.667s
+fibonacci( 46 ) =>  1,836,311,903,  5,942,430,145 calls,     4.053s
+fibonacci( 47 ) =>  2,971,215,073,  9,615,053,951 calls,     6.644s
+fibonacci( 48 ) =>  4,807,526,976, 15,557,484,097 calls,    10.688s
+fibonacci( 49 ) =>  7,778,742,049, 25,172,538,049 calls,    17.221s
+fibonacci( 50 ) => 12,586,269,025, 40,730,022,147 calls,    28.971s
+
+========================================/

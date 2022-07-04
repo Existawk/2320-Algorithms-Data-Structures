@@ -1,0 +1,161 @@
+#----------------------------------------------------------------------
+Programming Assignment 00
+
+#----------------------------------------------------------------------
+Purpose:
+
+  * Demonstrate C development environment.
+
+  * Demonstrate ability to write simple C function.
+
+  * Demonstrate ability to run an evaluation program a few times.
+
+#----------------------------------------------------------------------
+Background:
+
+  * Just a simple example to show that you can write ONE SIMPLE
+    FUNCTION in C and then run it a few times.  (OK, you also have
+    to define ONE GLOBAL VARIABLE.  I hope it's not too much for
+    you. :)
+
+#----------------------------------------------------------------------
+Tasks:
+
+  1. Download hmwk_00_dalioba.zip from Canvas.
+
+  2. Unzip the file somewhere convenient.
+
+  3. Change 'dalioba' in the name of the directory to your NetID.
+     (Your NetID is three letters followed by four or five digits.
+      The directory name will now be something like
+      'hmwk_00_abc1234' but with _your_ NetID in place of
+      'abc1234'.)
+
+  4. Look in that directory.  There's a Template directory that
+     has some files in it.  Move them up one level into the
+     'hmwk_00_abc1234' directory.
+
+  5. Change the header lines in the file fibonacci.c.
+
+      -- Line 1:  Family name first, then a comma, then
+                  personal name.
+
+      -- Line 2:  Your NetID.
+
+      -- Line 3:  The date you edited the file, in the format
+                  YYYY-MM-DD (all digits!).
+
+  6. Don't change anything in any other file!
+
+  7. There are a couple of TODO markers in the fibonacci.c file.
+     Write the code that they indicate.  (You can get the definition
+     signatures from the fibonacci.h file.)
+
+  8. Compile and run your code as follows,
+
+$ gcc -Wall -Wextra -o hmwk_00 hmwk_00.c fibonacci.c
+$
+fibonacci(  0 ) =>              0,              1 call,     0.000s
+$ ./hmwk_00 1
+fibonacci(  1 ) =>              1,              1 call,     0.000s
+$ ./hmwk_00 5
+fibonacci(  5 ) =>              5,             15 calls,     0.000s
+$ ./hmwk_00 10
+fibonacci( 10 ) =>             55,            177 calls,     0.000s
+$ ./hmwk_00 15
+fibonacci( 15 ) =>            610,          1,973 calls,     0.000s
+$ ./hmwk_00 20
+fibonacci( 20 ) =>          6,765,         21,891 calls,     0.000s
+$
+
+  9. If you don't get the SAME answers (except for the exact
+     time it takes to run;  machines will differ), do not go any
+     further until you have found and fixed your error(s).
+
+ 10. Once everything is running OK, take a look at the
+     dalioba-results.txt file.  You can see the results I got for
+     computing various Fibonacci numbers.  I went up to 50, which
+     took about 100 seconds to run.  Run your code on the same
+     numbers I did and see how far you can get before the run
+     starts to take too long.
+
+ 11. Collect your results in a file named 'abc1234-results.txt',
+     where 'abc1234' is YOUR NetID.
+
+ 12. Recompile your solution with this command,
+
+$ gcc -Ofast -Wall -Wextra -o hmwk_00 hmwk_00.c fibonacci.c
+$
+
+     and rerun your evaluations.  Collect your results and add
+     them to your results file.
+
+     Did it run any faster?
+
+ 13. The 'ulimit' log in the dalioba-results.txt file shows what
+     limits I have set.  Some students have trouble with a stack
+     overflow.  If that happens to you, you can use ulimit -s to
+     increase your stack limit.  (This shouldn't happen on such a
+     small example, but one never knows ...)
+
+#----------------------------------------------------------------------
+Submission:
+
+Make a zipfile of your 'hmwk_00_abc1234' directory (with 'abc1234'
+changed to YOUR NetID and with your fibonacci.c and abc1234-results.txt
+in it) and submit this zipfile on Canvas as your results for this
+assignment.
+
+All your zipfile should include is a directory with two files in
+it, your version of fibonacci.c (did you update the headers
+correctly?) and your version of abc1234-results.txt (ensure that
+you change 'abc1234' to YOUR NetID).
+
+You don't have to include any other files.
+
+#----------------------------------------------------------------------
+Hints:
+  1. Ensure your program compiles and runs correctly.  You should
+     not get ANY warnings or errors when you compile.  ALWAYS
+     compile your code with -Wall and -Wextra and deal with ANY
+     warnings or errors that are identified.
+
+     Generating warnings or errors, not compiling, not running,
+     core dumping, crashing, going into an infinite loop, getting
+     the wrong answers, ... will earn you ZERO points.
+
+  2. Ensure that you update the three header lines in each of the
+     source files with YOUR name (family name first, then a comma,
+     then your personal name), YOUR NetID, and the date you edit
+     the file, in the format YYYY-MM-DD (all digits!).
+
+     Not updating the header lines properly will cost you points.
+
+  3. Ensure your submission is packaged EXACTLY as described above.
+
+      -- Your submission should be a ZIP FILE (not a tar, rar, gz,
+         or any other kind of compressed file).
+
+      -- The zip file should be named 'hmwk_00_abc1234.zip' (with
+         'abc1234' replaced with YOUR NetID).
+
+      -- This zip file should have ONE item in it, a directory
+         named 'hmwk_00_abc1234'  (with 'abc1234' replaced with
+         YOUR NetID).
+
+      -- Your two files should be in that directory.  The files
+         should be named fibonacci.c and abc1234-results.txt (with
+         'abc1234' replace with YOUR NetID).
+
+     Submissions in the wrong format score ZERO points.
+
+  4. After you submit your zip file on Canvas, download it from
+     Canvas and check that your submission is in the proper
+     format, that the program runs and prints the correct output,
+     that you updated the header lines correctly, and so forth.
+
+  5. Are you CERTAIN you complied with all of these nit-picking
+     instructions?  Really?  Maybe you ought to check just one
+     more time. :)
+
+#----------------------------------------------------------------------

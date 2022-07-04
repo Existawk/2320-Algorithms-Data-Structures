@@ -1,0 +1,89 @@
+========================================
+
+=== No specific optimizations
+
+selection( ascending,        50,000 ) =>     0 errs,              1,249,975,000 inner iters,       2.447s
+selection( shuffle,          50,000 ) =>     0 errs,              1,249,975,000 inner iters,       2.463s
+selection( ascending,       100,000 ) =>     0 errs,              4,999,950,000 inner iters,       9.671s
+selection( shuffle,         100,000 ) =>     0 errs,              4,999,950,000 inner iters,      10.052s
+selection( ascending,       150,000 ) =>     0 errs,             11,249,925,000 inner iters,      22.135s
+selection( shuffle,         150,000 ) =>     0 errs,             11,249,925,000 inner iters,      22.101s
+selection( ascending,       200,000 ) =>     0 errs,             19,999,900,000 inner iters,      39.171s
+selection( shuffle,         200,000 ) =>     0 errs,             19,999,900,000 inner iters,      39.482s
+selection( ascending,       250,000 ) =>     0 errs,             31,249,875,000 inner iters,      61.833s
+selection( shuffle,         250,000 ) =>     0 errs,             31,249,875,000 inner iters,      62.777s
+selection( ascending,       300,000 ) =>     0 errs,             44,999,850,000 inner iters,      90.194s
+selection( shuffle,         300,000 ) =>     0 errs,             44,999,850,000 inner iters,      90.738s
+selection( ascending,       350,000 ) =>     0 errs,             61,249,825,000 inner iters,     122.505s
+selection( shuffle,         350,000 ) =>     0 errs,             61,249,825,000 inner iters,     132.563s
+selection( ascending,       400,000 ) =>     0 errs,             79,999,800,000 inner iters,     158.250s
+selection( shuffle,         400,000 ) =>     0 errs,             79,999,800,000 inner iters,     158.812s
+selection( ascending,       450,000 ) =>     0 errs,            101,249,775,000 inner iters,     198.844s
+selection( shuffle,         450,000 ) =>     0 errs,            101,249,775,000 inner iters,     200.483s
+selection( ascending,       500,000 ) =>     0 errs,            124,999,750,000 inner iters,     245.903s
+selection( shuffle,         500,000 ) =>     0 errs,            124,999,750,000 inner iters,     244.581s
+selection( ascending,       550,000 ) =>     0 errs,            151,249,725,000 inner iters,     294.866s
+selection( shuffle,         550,000 ) =>     0 errs,            151,249,725,000 inner iters,     298.456s
+selection( ascending,       600,000 ) =>     0 errs,            179,999,700,000 inner iters,     354.503s
+selection( shuffle,         600,000 ) =>     0 errs,            179,999,700,000 inner iters,     354.326s
+selection( ascending,       650,000 ) =>     0 errs,            211,249,675,000 inner iters,     414.203s
+selection( shuffle,         650,000 ) =>     0 errs,            211,249,675,000 inner iters,     414.207s
+selection( ascending,       700,000 ) =>     0 errs,            244,999,650,000 inner iters,     489.065s
+selection( shuffle,         700,000 ) =>     0 errs,            244,999,650,000 inner iters,     487.160s
+selection( ascending,       750,000 ) =>     0 errs,            281,249,625,000 inner iters,     558.523s
+selection( shuffle,         750,000 ) =>     0 errs,            281,249,625,000 inner iters,     558.261s
+selection( ascending,       800,000 ) =>     0 errs,            319,999,600,000 inner iters,     630.040s
+selection( shuffle,         800,000 ) =>     0 errs,            319,999,600,000 inner iters,     633.268s
+selection( ascending,       850,000 ) =>     0 errs,            361,249,575,000 inner iters,     711.259s
+selection( shuffle,         850,000 ) =>     0 errs,            361,249,575,000 inner iters,     713.556s
+selection( ascending,       900,000 ) =>     0 errs,            404,999,550,000 inner iters,     818.492s
+selection( shuffle,         900,000 ) =>     0 errs,            404,999,550,000 inner iters,     794.780s
+selection( ascending,       950,000 ) =>     0 errs,            451,249,525,000 inner iters,     887.703s
+selection( shuffle,         950,000 ) =>     0 errs,            451,249,525,000 inner iters,     876.397s
+selection( ascending,     1,000,000 ) =>     0 errs,            499,999,500,000 inner iters,     986.188s
+selection( shuffle,       1,000,000 ) =>     0 errs,            499,999,500,000 inner iters,     985.316s
+
+=== With -Ofast optimization
+
+selection( ascending,        50,000 ) =>     0 errs,              1,249,975,000 inner iters,       0.665s
+selection( shuffle,          50,000 ) =>     0 errs,              1,249,975,000 inner iters,       0.676s
+selection( ascending,       100,000 ) =>     0 errs,              4,999,950,000 inner iters,       2.646s
+selection( shuffle,         100,000 ) =>     0 errs,              4,999,950,000 inner iters,       2.668s
+selection( ascending,       150,000 ) =>     0 errs,             11,249,925,000 inner iters,       6.001s
+selection( shuffle,         150,000 ) =>     0 errs,             11,249,925,000 inner iters,       6.074s
+selection( ascending,       200,000 ) =>     0 errs,             19,999,900,000 inner iters,      10.669s
+selection( shuffle,         200,000 ) =>     0 errs,             19,999,900,000 inner iters,      10.688s
+selection( ascending,       250,000 ) =>     0 errs,             31,249,875,000 inner iters,      16.621s
+selection( shuffle,         250,000 ) =>     0 errs,             31,249,875,000 inner iters,      16.564s
+selection( ascending,       300,000 ) =>     0 errs,             44,999,850,000 inner iters,      23.930s
+selection( shuffle,         300,000 ) =>     0 errs,             44,999,850,000 inner iters,      24.026s
+selection( ascending,       350,000 ) =>     0 errs,             61,249,825,000 inner iters,      33.339s
+selection( shuffle,         350,000 ) =>     0 errs,             61,249,825,000 inner iters,      33.202s
+selection( ascending,       400,000 ) =>     0 errs,             79,999,800,000 inner iters,      43.277s
+selection( shuffle,         400,000 ) =>     0 errs,             79,999,800,000 inner iters,      44.102s
+selection( ascending,       450,000 ) =>     0 errs,            101,249,775,000 inner iters,      55.876s
+selection( shuffle,         450,000 ) =>     0 errs,            101,249,775,000 inner iters,      55.838s
+selection( ascending,       500,000 ) =>     0 errs,            124,999,750,000 inner iters,      68.630s
+selection( shuffle,         500,000 ) =>     0 errs,            124,999,750,000 inner iters,      68.182s
+selection( ascending,       550,000 ) =>     0 errs,            151,249,725,000 inner iters,      82.466s
+selection( shuffle,         550,000 ) =>     0 errs,            151,249,725,000 inner iters,      84.774s
+selection( ascending,       600,000 ) =>     0 errs,            179,999,700,000 inner iters,     100.779s
+selection( shuffle,         600,000 ) =>     0 errs,            179,999,700,000 inner iters,     101.226s
+selection( ascending,       650,000 ) =>     0 errs,            211,249,675,000 inner iters,     118.784s
+selection( shuffle,         650,000 ) =>     0 errs,            211,249,675,000 inner iters,     117.442s
+selection( ascending,       700,000 ) =>     0 errs,            244,999,650,000 inner iters,     135.443s
+selection( shuffle,         700,000 ) =>     0 errs,            244,999,650,000 inner iters,     135.526s
+selection( ascending,       750,000 ) =>     0 errs,            281,249,625,000 inner iters,     157.306s
+selection( shuffle,         750,000 ) =>     0 errs,            281,249,625,000 inner iters,     156.657s
+selection( ascending,       800,000 ) =>     0 errs,            319,999,600,000 inner iters,     178.276s
+selection( shuffle,         800,000 ) =>     0 errs,            319,999,600,000 inner iters,     177.833s
+selection( ascending,       850,000 ) =>     0 errs,            361,249,575,000 inner iters,     198.781s
+selection( shuffle,         850,000 ) =>     0 errs,            361,249,575,000 inner iters,     198.781s
+selection( ascending,       900,000 ) =>     0 errs,            404,999,550,000 inner iters,     226.405s
+selection( shuffle,         900,000 ) =>     0 errs,            404,999,550,000 inner iters,     224.701s
+selection( ascending,       950,000 ) =>     0 errs,            451,249,525,000 inner iters,     250.838s
+selection( shuffle,         950,000 ) =>     0 errs,            451,249,525,000 inner iters,     253.045s
+selection( ascending,     1,000,000 ) =>     0 errs,            499,999,500,000 inner iters,     275.683s
+selection( shuffle,       1,000,000 ) =>     0 errs,            499,999,500,000 inner iters,     268.692s
+
+========================================

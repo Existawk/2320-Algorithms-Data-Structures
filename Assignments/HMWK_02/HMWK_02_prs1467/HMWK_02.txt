@@ -1,0 +1,240 @@
+#----------------------------------------------------------------------
+Programming Assignment 02
+
+#----------------------------------------------------------------------
+Purpose:
+
+  * Demonstrate C development environment.
+
+  * Demonstrate ability to write yet another couple of simple C
+    functions.
+
+  * Demonstrate ability to run an evaluation program a few times.
+
+#----------------------------------------------------------------------
+Background:
+
+  * The two simple functions this time are MERGESORT and
+    QUICKSORT as described in class.
+
+#----------------------------------------------------------------------
+Tasks:
+
+  1. Download hmwk_02_dalioba.zip from Canvas.
+
+  2. Unzip the file somewhere convenient.
+
+  3. Change 'dalioba' in the name of the directory to your NetID.
+     (Your NetID is three letters followed by four or five digits.
+      The directory name will now be something like
+      'hmwk_02_abc1234' but with _your_ NetID in place of
+      'abc1234'.)
+
+  4. Look in that directory.  There's a Template directory that
+     has some files in it.  Move them up one level into the
+     'hmwk_02_abc1234' directory.
+
+  5. Change the header lines in the files mergesort.c and
+     quicksort.c.
+
+      -- Line 1:  Family name first, then a comma, then
+                  personal name.
+
+      -- Line 2:  Your NetID.
+
+      -- Line 3:  The date you edited the file, in the format
+                  YYYY-MM-DD (all digits!).
+
+  6. Don't change anything in any other file!
+
+  7. There are a couple of TODO markers in each of the files.
+     Write the code that they indicate.  (You can get the
+     definition signatures from the corresponding .h files.)
+
+     Do NOT try to allocate Mergesort's L and R arrays on the
+     stack!  That is, do NOT use C's VLAs.  Use malloc() and
+     free() for those arrays.  If you use VLAs, you will score
+     ZERO credit!
+
+  8. Compile and run your Mergesort code as follows,
+
+$ gcc -Wall -Wextra -fsanitize=leak -fsanitize=address -o hmwk_02a hmwk_02a.c mergesort.c
+$ ./hmwk_02a   5000000
+mergesort( ascending,     5,000,000 ) =>     0 errs,                  9,999,999 invokes,       0.780s
+mergesort( shuffle,       5,000,000 ) =>     0 errs,                  9,999,999 invokes,       1.197s
+$ ./hmwk_02a  10000000
+mergesort( ascending,    10,000,000 ) =>     0 errs,                 19,999,999 invokes,       1.546s
+mergesort( shuffle,      10,000,000 ) =>     0 errs,                 19,999,999 invokes,       2.497s
+$ ./hmwk_02a  50000000
+mergesort( ascending,    50,000,000 ) =>     0 errs,                 99,999,999 invokes,       8.360s
+mergesort( shuffle,      50,000,000 ) =>     0 errs,                 99,999,999 invokes,      13.662s
+$ ./hmwk_02a 100000000
+mergesort( ascending,   100,000,000 ) =>     0 errs,                199,999,999 invokes,      17.419s
+mergesort( shuffle,     100,000,000 ) =>     0 errs,                199,999,999 invokes,      28.274s
+$ ./hmwk_02a 150000000
+mergesort( ascending,   150,000,000 ) =>     0 errs,                299,999,999 invokes,      26.401s
+mergesort( shuffle,     150,000,000 ) =>     0 errs,                299,999,999 invokes,      43.508s
+$ ./hmwk_02a 200000000
+mergesort( ascending,   200,000,000 ) =>     0 errs,                399,999,999 invokes,      36.027s
+mergesort( shuffle,     200,000,000 ) =>     0 errs,                399,999,999 invokes,      58.890s
+$ ./hmwk_02a 250000000
+mergesort( ascending,   250,000,000 ) =>     0 errs,                499,999,999 invokes,      45.314s
+mergesort( shuffle,     250,000,000 ) =>     0 errs,                499,999,999 invokes,      73.886s
+$
+
+  9. If you get a crash, core dump, segmentation fault, or any
+     other compile-time or runtime error (including those reported
+     by the sanitizer), or any "Oops" messages when your Mergesort
+     runs, do not go any further until you have found and fixed
+     your error(s).
+
+     You should see the SAME number of invokes for each test case.
+     (Why?)
+
+ 10. Now compile and run your Quicksort code as follows,
+
+$ gcc -Wall -Wextra -fsanitize=leak -fsanitize=address -o hmwk_02b hmwk_02b.c quicksort.c
+$ ./hmwk_02b   5000000
+quicksort( ascending,     5,000,000 ) =>     0 errs,                  5,805,697 invokes,       0.532s
+quicksort( shuffle,       5,000,000 ) =>     0 errs,                  5,715,007 invokes,       0.933s
+$ ./hmwk_02b  10000000
+quicksort( ascending,    10,000,000 ) =>     0 errs,                 11,611,393 invokes,       1.104s
+quicksort( shuffle,      10,000,000 ) =>     0 errs,                 11,428,163 invokes,       1.980s
+$ ./hmwk_02b  50000000
+quicksort( ascending,    50,000,000 ) =>     0 errs,                 66,445,569 invokes,       6.198s
+quicksort( shuffle,      50,000,000 ) =>     0 errs,                 57,143,823 invokes,      10.670s
+$ ./hmwk_02b 100000000
+quicksort( ascending,   100,000,000 ) =>     0 errs,                132,891,137 invokes,      12.872s
+quicksort( shuffle,     100,000,000 ) =>     0 errs,                114,280,645 invokes,      22.130s
+$ ./hmwk_02b 150000000
+quicksort( ascending,   150,000,000 ) =>     0 errs,                165,782,273 invokes,      19.255s
+quicksort( shuffle,     150,000,000 ) =>     0 errs,                171,428,361 invokes,      34.186s
+$ ./hmwk_02b 200000000
+quicksort( ascending,   200,000,000 ) =>     0 errs,                265,782,273 invokes,      26.544s
+quicksort( shuffle,     200,000,000 ) =>     0 errs,                228,569,843 invokes,      46.289s
+$ ./hmwk_02b 250000000
+quicksort( ascending,   250,000,000 ) =>     0 errs,                268,435,455 invokes,      33.149s
+quicksort( shuffle,     250,000,000 ) =>     0 errs,                285,719,921 invokes,      59.592s
+
+ 11. If you get a crash, core dump, segmentation fault, or any
+     other compile-time or runtime error (including those reported
+     by the sanitizer), or any "Oops" messages when your Quicksort
+     runs, do not go any further until you have found and fixed
+     your error(s).
+
+     The array is shuffled into a RANDOM order, so you are likely
+     to get a different number of invokes for each of the test
+     cases.  (Or, are you?  Think about it.)
+
+     Why is this so for Quicksort, but not for Mergesort?
+
+ 12. Once everything is running OK, you can take a look at the
+     dalioba-results-mergesort.txt and dalioba-results-quicksort.txt
+     files.
+
+     Here you will see the sizes, invokes, and timings I got when
+     I ran the code on my potato computer.
+
+     Do a spread of runs on your own machine.  You want to get
+     about 15-20 runs spread between about 1-5 seconds on the low
+     end and as big as you can on the high end (so the plot is
+     useful).  How big of a test case can you run on your machine?
+     You'll probably run out of memory before you have too large
+     of runtimes.  Mergesort and Quicksort are _fast_, even in
+     these untuned implementations.
+
+ 11. Collect your results in a file named
+     'abc1234-results-mergesort.txt' (for the Mergesort) and
+     'abc1234-results-quicksort.txt' (for the Quicksort) (duh!),
+     where 'abc1234' is YOUR NetID.
+
+ 12. Recompile your solutions with these commands,
+
+$ gcc -Wall -Wextra -fsanitize=leak -fsanitize=address -Ofast -o hmwk_02a hmwk_02a.c mergesort.c
+$ gcc -Wall -Wextra -fsanitize=leak -fsanitize=address -Ofast -o hmwk_02b hmwk_02b.c quicksort.c
+$
+
+     and rerun your evaluations with the same array sizes.  Collect
+     your results and add them to your 'abc1234-results-mergesort.txt'
+     and 'abc1234-results-quicksort.txt' files.
+
+     Did it run any faster?
+
+ 13. The 'ulimit' log in the ulimit.txt file shows what process
+     limits I have set.  Some students have trouble with a stack
+     overflow.  If that happens to you, you can use ulimit -s to
+     increase your stack limit.  (This shouldn't happen on such
+     small examples, but one never knows ...)
+
+ 14. By the way, if you get any reported memory issues from the
+     sanitizer, try reruning the same size test but with your
+     code recompliled with no optimizations and also with the -g
+     switch so you get line numbers in the reports.
+
+#----------------------------------------------------------------------
+Submission:
+
+Make a zipfile of your 'hmwk_02_abc1234' directory (with 'abc1234'
+changed to YOUR NetID and with your mergesort.c, quicksort.c, and
+abc1234-results-mergesort.txt and abc1234-results-quicksort.txt
+files in it) and submit this zipfile on Canvas as your results for
+this assignment.
+
+All your zipfile should include is a directory with four files in
+it, your versions of mergesort.c and quicksort.c (did you update
+the headers correctly?) and your versions of
+abc1234-results-mergesort.txt and abc1234-results-quicksort.txt
+(ensure that you change 'abc1234' to YOUR NetID).
+
+You don't have to include any other files.
+
+#----------------------------------------------------------------------
+Hints:
+  1. Ensure your programs compile and run correctly.  You should
+     not get ANY warnings or errors when you compile.  ALWAYS
+     compile your code with -Wall and -Wextra and deal with ANY
+     warnings or errors that are identified.  ALWAYS compile your
+     code with -fsanitize=leak and -fsanitize=address and deal with
+     ANY warnings or errors reported.
+
+     Generating warnings or errors, not compiling, not running,
+     core dumping, crashing, going into an infinite loop, getting
+     the wrong answers, getting memory errors ... will earn you
+     ZERO points.
+
+  2. Ensure that you update the three header lines in each of the
+     source files with YOUR name (family name first, then a comma,
+     then your personal name), YOUR NetID, and the date you edit
+     the file, in the format YYYY-MM-DD (all digits!).
+
+     Not updating the header lines properly will cost you points.
+
+  3. Ensure your submission is packaged EXACTLY as described above.
+
+      -- Your submission should be a ZIP FILE (not a tar, rar, gz,
+         or any other kind of compressed file).
+
+      -- The zip file should be named 'hmwk_02_abc1234.zip' (with
+         'abc1234' replaced with YOUR NetID).
+
+      -- This zip file should have ONE item in it, a directory
+         named 'hmwk_02_abc1234'  (with 'abc1234' replaced with
+         YOUR NetID).
+
+      -- Your two files should be in that directory.  The files
+         should be named mergesort.c, quicksort.c,
+         abc1234-results-mergesort.txt and abc1234-results-quicksort.txt
+         (with 'abc1234' replace with YOUR NetID).
+
+     Submissions in the wrong format score ZERO points.
+
+  4. After you submit your zip file on Canvas, download it from
+     Canvas and check that your submission is in the proper
+     format, that the program runs and prints the correct output,
+     that you updated the header lines correctly, and so forth.
+
+  5. Are you CERTAIN you complied with all of these nit-picking
+     instructions?  Really?  Maybe you ought to check just one
+     more time. :)
+
+#----------------------------------------------------------------------
